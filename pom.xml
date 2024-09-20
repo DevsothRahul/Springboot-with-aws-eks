@@ -70,7 +70,6 @@
 	</dependencies>
 
 	<build>
-		 <directory>/var/lib/go-agent/pipelines/Test-first-pipeline/target</directory>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
