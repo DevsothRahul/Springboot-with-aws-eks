@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+  labels:
+    app: springboot-app  # Corrected label to match the Service selector
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springboot-app
+  template:
+    metadata:
+      labels:
+        app: springboot-app
+    spec:
+      containers:
+      - name: springboot-app
+        image: 314146336528.dkr.ecr.us-east-2.amazonaws.com/test:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sprinboot-app-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: springboot-app  # This should match the Deployment's labels
+  ports:
+    - port: 80
+      targetPort: 8080
