@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.techwave.demo.pojo.User;
-import com.techwave.demo.repo.UserRepository;
+//import com.techwave.demo.pojo.User;
+//import com.techwave.demo.repo.UserRepository;
 
 @RestController
 public class WelcomeController {
 
-	@Autowired
-	private UserRepository userRepository;
+//	@Autowired
+//	private UserRepository userRepository;
 
 	@GetMapping("/")
 	public String home() {
@@ -27,16 +27,16 @@ public class WelcomeController {
 		return "<h1>Hello, Welcome to SprinBoot <h1>";
 	}
 
-	@GetMapping("/all")
-	public List<User> getAllUser() {
-		return (List<User>) userRepository.findAll();
-	}
-
-	@PostMapping("/adduser")
-	public void createUser(@RequestBody User user) {
-		System.out.println("hello");
-		userRepository.save(user);
-
-	}
+//	@GetMapping("/all")
+//	public List<User> getAllUser() {
+//		return (List<User>) userRepository.findAll();
+//	}
+//
+//	@PostMapping("/adduser")
+//	public void createUser(@RequestBody User user) {
+//		System.out.println("hello");
+//		userRepository.save(user);
+//
+//	}
 
 }
